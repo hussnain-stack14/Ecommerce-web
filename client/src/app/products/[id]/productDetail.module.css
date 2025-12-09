@@ -1,0 +1,589 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: hsl(240, 100%, 60%);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.backLink:hover {
+    gap: 0.75rem;
+    color: hsl(240, 100%, 70%);
+}
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    gap: 1rem;
+}
+
+.errorContainer h2 {
+    color: hsl(0, 80%, 50%);
+    font-size: 2rem;
+}
+
+/* Product Section */
+.productSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Image Gallery */
+.imageGallery {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.mainImageContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, hsl(240, 20%, 95%), hsl(240, 15%, 98%));
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mainImageContainer:hover .mainImage {
+    transform: scale(1.05);
+}
+
+.outOfStockBadge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: linear-gradient(135deg, hsl(0, 80%, 50%), hsl(0, 70%, 45%));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.thumbnail {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid transparent;
+    background: hsl(240, 20%, 95%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail:hover {
+    border-color: hsl(240, 100%, 70%);
+    transform: translateY(-2px);
+}
+
+.thumbnailActive {
+    border-color: hsl(240, 100%, 60%);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Product Info */
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.category {
+    color: hsl(240, 100%, 60%);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.productName {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, hsl(240, 50%, 20%), hsl(240, 100%, 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.ratingSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.starFilled {
+    color: hsl(45, 100%, 50%);
+    fill: hsl(45, 100%, 50%);
+}
+
+.starEmpty {
+    color: hsl(0, 0%, 80%);
+}
+
+.ratingText {
+    color: hsl(0, 0%, 50%);
+    font-size: 0.95rem;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, hsl(240, 100%, 60%), hsl(280, 100%, 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description {
+    color: hsl(0, 0%, 40%);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Purchase Section */
+.purchaseSection {
+    background: linear-gradient(135deg, hsl(240, 30%, 98%), hsl(240, 25%, 96%));
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid hsl(240, 20%, 90%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.quantitySelector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quantitySelector label {
+    font-weight: 600;
+    color: hsl(240, 30%, 30%);
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.qtyButton {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, hsl(240, 100%, 60%), hsl(280, 100%, 60%));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.qtyButton:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.qtyButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.qtyValue {
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 40px;
+    text-align: center;
+    color: hsl(240, 30%, 30%);
+}
+
+.stockInfo {
+    text-align: center;
+}
+
+.inStock {
+    color: hsl(120, 60%, 40%);
+    font-weight: 600;
+}
+
+.outOfStock {
+    color: hsl(0, 80%, 50%);
+    font-weight: 600;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.addToCartBtn {
+    flex: 1;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, hsl(240, 100%, 60%), hsl(280, 100%, 60%));
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+.addToCartBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+}
+
+.addToCartBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.wishlistBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid hsl(240, 100%, 60%);
+    background: white;
+    color: hsl(240, 100%, 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.wishlistBtn:hover {
+    background: hsl(240, 100%, 60%);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-top: 2px solid hsl(240, 20%, 90%);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature svg {
+    font-size: 2rem;
+    color: hsl(240, 100%, 60%);
+}
+
+.feature h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: hsl(240, 30%, 30%);
+}
+
+.feature p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: hsl(0, 0%, 50%);
+}
+
+/* Reviews Section */
+.reviewsSection {
+    background: linear-gradient(135deg, hsl(240, 30%, 98%), hsl(240, 25%, 96%));
+    padding: 3rem;
+    border-radius: 20px;
+    border: 2px solid hsl(240, 20%, 90%);
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(240, 30%, 20%);
+    margin-bottom: 2rem;
+}
+
+.reviewForm {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.reviewForm h3 {
+    margin: 0 0 1.5rem 0;
+    color: hsl(240, 30%, 30%);
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: hsl(240, 30%, 30%);
+}
+
+.ratingInput {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.starButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.starButton:hover {
+    transform: scale(1.2);
+}
+
+.textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid hsl(240, 20%, 90%);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: hsl(240, 100%, 60%);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.submitButton {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, hsl(240, 100%, 60%), hsl(280, 100%, 60%));
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.submitButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.loginPrompt {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    color: hsl(0, 0%, 50%);
+}
+
+.loginPrompt a {
+    color: hsl(240, 100%, 60%);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.loginPrompt a:hover {
+    text-decoration: underline;
+}
+
+.reviewList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.noReviews {
+    text-align: center;
+    color: hsl(0, 0%, 50%);
+    padding: 2rem;
+}
+
+.review {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.review:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.reviewHeader strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: hsl(240, 30%, 30%);
+    font-size: 1.05rem;
+}
+
+.reviewStars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.reviewDate {
+    color: hsl(0, 0%, 50%);
+    font-size: 0.9rem;
+}
+
+.reviewComment {
+    color: hsl(0, 0%, 40%);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .productSection {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .imageGallery {
+        position: static;
+    }
+
+    .productName {
+        font-size: 2rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .productName {
+        font-size: 1.75rem;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .actionButtons {
+        flex-direction: column;
+    }
+
+    .wishlistBtn {
+        width: 100%;
+        height: 50px;
+    }
+
+    .reviewsSection {
+        padding: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,207 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    min-height: calc(100vh - 200px);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, hsl(240, 100%, 60%), hsl(280, 100%, 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 1rem 0;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: hsl(0, 0%, 50%);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 80px;
+}
+
+.card {
+    position: relative;
+    padding: 2.5rem;
+    background: white;
+    border: 2px solid hsl(240, 20%, 90%);
+    border-radius: 24px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--category-color, #667eea) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--category-color, hsl(240, 100%, 60%));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card:hover::before {
+    opacity: 0.05;
+}
+
+.iconWrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover .iconWrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(240, 30%, 20%);
+    margin: 0 0 0.75rem 0;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: hsl(0, 0%, 50%);
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.count {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--category-color, hsl(240, 100%, 60%));
+    margin: 0;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: var(--category-color, hsl(240, 100%, 60%));
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.4s ease;
+}
+
+.card:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Benefits Banner */
+.banner {
+    text-align: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, hsl(240, 30%, 98%), hsl(240, 25%, 96%));
+    border-radius: 24px;
+    border: 2px solid hsl(240, 20%, 90%);
+}
+
+.banner h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: hsl(240, 30%, 20%);
+    margin: 0 0 3rem 0;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.benefit {
+    text-align: center;
+}
+
+.benefitIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(240, 30%, 20%);
+    margin: 0 0 0.75rem 0;
+}
+
+.benefit p {
+    font-size: 1rem;
+    color: hsl(0, 0%, 50%);
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card {
+        padding: 2rem;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .banner {
+        padding: 40px 24px;
+    }
+
+    .banner h2 {
+        font-size: 1.5rem;
+    }
+}
