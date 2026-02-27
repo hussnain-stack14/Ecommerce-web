@@ -1,5 +1,6 @@
 {
   "buildCommand": "cd client-react && npm run build",
+  "installCommand": "cd client-react && npm install",
   "outputDirectory": "client-react/dist",
   "framework": "vite"
 }
