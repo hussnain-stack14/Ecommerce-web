@@ -11,8 +11,19 @@ const baseQuery = fetchBaseQuery({
   },
 });
 
+const baseQueryWithReauth = async (args, api, extraOptions) => {
+  let result = await baseQuery(args, api, extraOptions);
+  if (result.error) {
+    if (result.error.status === 'FETCH_ERROR') {
+      console.error('Network Error: Make sure your backend API is running and CORS is configured.');
+    }
+    console.error('API Request Failed:', result.error);
+  }
+  return result;
+};
+
 export const apiSlice = createApi({
-  baseQuery,
+  baseQuery: baseQueryWithReauth,
   tagTypes: ['Product', 'Order', 'User'],
   endpoints: () => ({}),
 });
