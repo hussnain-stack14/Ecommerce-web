@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+dotenv.config();
 const cors = require('cors');
 const connectDB = require('./config/db');
 const path = require('path');
@@ -8,9 +9,8 @@ const userRoutes = require('./routes/userRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 
-dotenv.config();
-
-connectDB();
+// Initialize DB connection but don't block
+connectDB().catch(err => console.error('Initial DB Error:', err));
 
 const app = express();
 
